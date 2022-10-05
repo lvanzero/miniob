@@ -64,4 +64,6 @@ RUN cmake -B ${HOME_DIR}/source/miniob/build -DDEBUG=ON -DCMAKE_C_COMPILER=`whic
 WORKDIR ${HOME_DIR}
 
 ENTRYPOINT tail -f /dev/null
+docker build -t miniob .
+docker run --privileged -d --name='miniob' miniob:latest
 
